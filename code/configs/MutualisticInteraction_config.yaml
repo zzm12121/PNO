@@ -1,0 +1,35 @@
+dimension: 1
+skeleton_F:
+  num: 10
+  type: 'Mutualistic_F'
+  fixed: True
+  fixed_expr: 'b + x_1 * ( 1 - x_1 / k) * ( x_1 / c-1 )'
+  skeleton_detail:
+    variables: ["x_1"]
+    constants: ["b","k","c"]
+  const_detail:
+    num_of_sample: 2
+    repeat: 5
+    num: 3
+    constant_range: [[0.05,0.15],[0.5,1.5],[4,6]]
+skeleton_G:
+  num: 10
+  type: 'Mutualistic_G'
+  fixed: True
+  fixed_expr: '(x_1*x_2)/(d+e*x_1+h*x_2)'
+  skeleton_detail:
+    variables: [ "x_1","x_2"]
+    constants: ["d","e","h"]
+  const_detail:
+    num_of_sample: 2
+    repeat: 5
+    num: 3
+    constant_range: [[0.8,1.0],[0.05,0.15],[4,6]]
+topo:
+  num: 20
+  type: 'power_law'
+t:
+  start: 0
+  end: 1.
+  inc: 1e-2
+resample_init_condition: False

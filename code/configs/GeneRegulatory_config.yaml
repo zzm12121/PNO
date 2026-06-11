@@ -1,0 +1,49 @@
+#the dimension of variables in dynamic
+dimension: 1
+
+# the F skeleton in dynamic
+skeleton_F:
+  num: 3 #the number of skeleton
+  type: 'Gene_F' #the type of skeleton
+  fixed: True #fixed expression whether or not
+  fixed_expr: '-b*x_1**f' #the fixed expression of skeleton
+  skeleton_detail:
+    variables: ["x_1"] #the variables of skeleton
+    constants: ["b","f"] #the constants of skeleton
+  const_detail:
+    num_of_sample: 2 #the number of sample per skeleton
+    repeat: 5 #the maximum attempts for sampling
+    num: 2 # the number of constants per skeleton
+    #the value range of constant
+    #the first element represent the name of constant
+    #the second element represent discrete or continuous, 0:discrete example {1},{0,1,4,5}  1:continuous example [0.5,1.5], [2,5]
+    constant_range: [['b',1,0.5,1.5],['f',0,1,2]]
+
+# the G skeleton in dynamic
+skeleton_G:
+  num: 3
+  type: 'Gene_G'
+  fixed: True
+  fixed_expr: '(x_2**h)/(x_2**h+1)'
+  skeleton_detail:
+    variables: ["x_2"]
+    constants: ["h"]
+  const_detail:
+    num_of_sample: 2
+    repeat: 5
+    num: 1
+    constant_range: [['h',0,1]]
+
+# the topo in dynamic
+topo:
+  num: 20 # the number of nodes in topo
+  type: 'power_law' # the type of topo
+
+# the time in dynamic
+t:
+  start: 0 #the start of time
+  end: 1. #the end of time
+  inc: 1e-2 #the inc of time
+
+# the initial value in dynamic
+resample_init_condition: False

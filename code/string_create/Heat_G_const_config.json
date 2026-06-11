@@ -1,0 +1,6 @@
+{
+    "num_of_sample": 2,
+    "repeat": 5,
+    "num_of_constant": 1,
+    "constant_range": [[-2,2]]
+}
